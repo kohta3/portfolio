@@ -1,0 +1,184 @@
+.nav-bar{
+    position: fixed;
+    top: 0;
+    right: 0;
+}
+
+.about{
+    position: relative;
+    z-index: -1;
+}
+
+.about-header{
+    width: 100%;
+}
+
+.about-header img{
+    width: 100%;
+}
+
+.about-title{
+    position: absolute;
+    top: 45%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+    color: #DBE9FF;
+    font-weight: 400;
+    font-size: 78px;
+    background: rgba(0, 0, 0, 0.3);
+}
+
+.profile{
+    margin: 30px 70px;
+    padding: 30px 0;
+    display: flex;
+    align-items: center;
+}
+
+.profile picture{
+    flex: 1;
+    text-align: center;
+}
+
+.profile picture img{
+    width: 40%;
+    object-fit: contain;
+}
+
+.profile-about{
+    flex: 2;
+}
+
+.profile-about h2{
+    font-size: 46px;
+}
+
+.profile-about p{
+    font-size: 20px;
+}
+
+@media screen and (max-width: 1280px) {
+    .about-title{
+        font-size: 60px;
+    }
+}
+
+@media screen and (max-width: 768px) {
+    .about-title{
+        font-size: 26px;
+    }
+
+    .profile {
+        flex-direction: column;
+    }
+
+    .profile picture{
+        margin-bottom: 20px;
+    }
+
+    .picture,.profile-about {
+        width: 100%;
+    }
+
+    .profile-about h2{
+        font-size: 30px;
+    }
+
+    .profile-about p{
+        font-size: 14px;
+        line-height : 20px;
+    }
+}
+
+
+
+.hobby{
+    width: 100%;
+}
+
+.hobby h3{
+    width: fit-content;
+    margin: 20px auto;
+    font-size: 36px;
+}
+
+.hobby-content{
+    display: flex;
+    flex-direction: column;
+}
+
+.hobby-content .hobby-row{
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+}
+
+@media screen and (max-width: 768px) {
+    .hobby-content .hobby-row{
+        display: flex;
+        justify-content: space-between;
+        flex-direction: column;
+        width: 100%;
+    }
+}
+
+.hobby-content .hobby-row label{
+    flex: 1;
+    text-align: center;
+}
+
+.hobby-content .hobby-row label img{
+    width: 80%;
+    aspect-ratio: 3/2;
+    object-fit: cover;
+}
+
+.hobby-content .hobby-row label p{
+    font-size: 24px;
+    font-weight: 500;
+}
+
+.chk-box-popup{
+    display: none;
+}
+
+.mortorcycle-popup,.camp-popup,.travel-popup,.eat-popup{
+    display: none;
+    background-color: rgba(0, 0, 0,0.7);
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    z-index: 0;
+}
+
+.mortorcycle-popup label,.camp-popup label,.travel-popup label,.eat-popup label{
+    width: 100vw;
+    height: 100vh;
+    z-index: 1;
+    position: relative;
+}
+
+input#mortorcycle:checked ~ .mortorcycle-popup,
+input#camp:checked ~ .camp-popup,
+input#travel:checked ~ .travel-popup,
+input#eat:checked ~ .eat-popup{
+    display: block;
+}
+
+.popup_img {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 80%;
+    z-index: 2;
+}
+
+.popup_img img{
+    width: 100%;
+    object-fit: contain;
+    z-index: 3;
+}

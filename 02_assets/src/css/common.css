@@ -1,0 +1,51 @@
+body{
+    margin: 0;
+    font-family: "Italiana", sans-serif;
+}
+
+.nav-bar{
+    margin: 0 0 0 auto;
+    display: flex;
+    justify-content: flex-end;
+}
+
+.nav-menu{
+    display: flex;
+    justify-content: flex-end;
+    list-style: none;
+    margin-top: 10px;
+    font-weight: 400;
+    font-style: normal;
+}
+
+.nav-item{
+    margin-left: 25px;
+    max-width: 100%;
+}
+
+.nav-item a{
+    color: white;
+    font-size: 24px;
+}
+
+@media screen and (max-width: 720px) {
+    .nav-item a{
+        font-size: 12px;
+    }
+}
+
+.sns-icon{
+    margin-top: 10px;
+    margin-left: 25px;
+    text-align: center;
+    width: fit-content;
+}
+
+.sns-icon img{
+    width: 30px;
+    object-fit: contain;
+}
+
+.sns-icon:nth-child(3){
+    margin-right: 25px;
+}
