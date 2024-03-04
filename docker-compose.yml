@@ -1,0 +1,17 @@
+version: '3'
+
+services:
+  portfolio:
+    image: php:7.4-apache
+    container_name: portfolio
+    ports:
+      - "8081:80"
+    volumes:
+      - ./php.ini:/usr/local/etc/php/php.ini
+      - ../../portfolio:/var/www/html
+    networks:
+      - portfolio
+
+networks:
+  portfolio:
+    driver: bridge
