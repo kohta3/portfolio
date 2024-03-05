@@ -49,3 +49,62 @@ body{
 .sns-icon:nth-child(3){
     margin-right: 25px;
 }
+
+footer{
+    display: flex;
+    justify-content: center;
+    margin-top: 30px;
+    padding: 10px 0;
+    background: linear-gradient(45deg, #696969, black);
+    color: white;
+}
+
+footer .footer-img{
+    width: 20%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+footer .footer-img img{
+    width: 30%;
+}
+
+footer .footer-content{
+    width: 50%;
+}
+
+footer .footer-content ul{
+    list-style: none;
+    padding: 0;
+}
+
+footer .footer-content li:nth-child(1){
+    word-break: auto-phrase;
+}
+
+@media screen and (max-width: 720px) {
+    footer{
+        flex-direction: column;
+    }
+
+    footer .footer-img{
+        width: 100%;
+        text-align: center;
+    }
+    
+    footer .footer-img img{
+        width: 30%;
+    }
+    
+    footer .footer-content{
+        width: 90%;
+        margin: auto;
+    }
+
+    footer .footer-content h3{
+        font-size: 22px;
+        font-weight: 500;
+        margin-top: 20px;
+    }
+}
