@@ -1,0 +1,229 @@
+.nav-bar{
+    border-bottom: 1px solid grey;
+}
+
+.nav-bar a{
+    color: black;
+}
+.contact{
+    position: relative;
+    min-height: 80vh;
+    margin: 40px;
+}
+
+.contact-inner {
+    max-width: 80%;
+    margin: 30px auto 50px auto;
+    padding: 20px;
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    position: relative;
+}
+
+.contact-inner picture{
+    position: absolute;
+    top: 0;
+    left: 50%;
+    transform: translate(-50%,-55%);
+}
+
+.contact-inner picture img{
+    width: 50px;
+}
+
+.contact-inner h2{
+    width: 100%;
+    text-align: center;
+}
+
+.contact-inner form{
+    display: flex;
+    flex-direction: column;
+}
+
+.contact-input{
+    display: flex;
+    margin-bottom: 20px;
+}
+
+.contact-input label{
+    flex: 1;
+}
+
+.contact-input div{
+    flex: 3;
+}
+
+.contact-input p,.checkbox-div-inner p{
+    color: red;
+    font-size: 12px;
+    margin: 0;
+    visibility: hidden;
+}
+
+.contact-input input,.contact-input textarea,.contact-input select{
+    width: 80%;
+    background: #EFEFEF;
+    border-radius: 8px;
+    border: none;
+    padding: 10px;
+}
+
+.contact-input input:focus{
+    animation: focusAction 0.5s forwards;
+}
+
+.contact-input select:focus{
+    animation: focusAction2 0.5s forwards;
+}
+
+.contact-input textarea:focus{
+    animation: focusAction3 0.5s forwards;
+}
+
+@keyframes focusAction{
+    0%{
+        width: 30%;
+        background: #EFEFEF;
+    }
+    100%{
+        width: 80%;
+        background: rgb(255, 204, 108);
+    }
+}
+
+@keyframes focusAction2{
+    0%{
+        background: #EFEFEF;
+    }
+    100%{
+        background: rgb(255, 204, 108);
+    }
+}
+
+@keyframes focusAction3{
+    0%{
+        width: 30%;
+        height: 30%;
+        background: #EFEFEF;
+    }
+    50%{
+        width: 80%;
+        height: 30%;
+    }
+    100%{
+        width: 80%;
+        height: 100%;
+        background: rgb(255, 204, 108);
+    }
+}
+
+.checkbox-div{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.checkbox-div label{
+    font-size: 14px;
+    padding-left: 10px;
+}
+
+em{
+    color: red;
+    font-size: 14px;
+    font-weight: 700;
+}
+
+.button {
+    display: inline-block;
+    width: fit-content;
+    padding: 12px 30px;
+    margin: auto;
+    font-size: 16px;
+    text-transform: uppercase;
+    color: black;
+    background-color: white;
+    border: 1px solid orange;
+    border-radius: 6px;
+    cursor: pointer;
+    transition: background-color 0.3s ease, border 1s ease, color 1s ease;
+}
+
+.button:hover {
+    background-color: orange;
+    border: 1px solid red;
+    color: white;
+}
+
+.button:focus {
+    outline: none;
+    background-color: white;
+    color: orange;
+}
+
+@media screen and (max-width: 768px) {
+    .contact{
+        margin: 0;
+    }
+
+    .contact-inner {
+        width: 90%;
+    }
+
+    .contact-input{
+        flex-direction: column;
+    }
+
+    .contact-input input,.contact-input textarea,.contact-input select{
+        width: 100%;
+    }
+
+    .checkbox-div label{
+        font-size: 10px;
+    }
+
+    .button{
+        width: 90%;
+    }
+
+    @keyframes focusAction{
+        0%{
+            width: 30%;
+            background: #EFEFEF;
+        }
+        100%{
+            width: 100%;
+            background: rgb(255, 204, 108);
+        }
+    }
+    
+    @keyframes focusAction2{
+        0%{
+            background: #EFEFEF;
+        }
+        100%{
+            background: rgb(255, 204, 108);
+        }
+    }
+    
+    @keyframes focusAction3{
+        0%{
+            width: 30%;
+            height: 100px;
+            background: #EFEFEF;
+        }
+        50%{
+            width: 100%;
+            height: 100px;
+        }
+        100%{
+            width: 100%;
+            height: 250px;
+            background: rgb(255, 204, 108);
+        }
+    }
+}

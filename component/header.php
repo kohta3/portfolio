@@ -40,7 +40,7 @@
             // 他のページに対する処理を追加
             break;
         case '/contact':
-            // 他のページに対する処理を追加
+            echo '<link rel="stylesheet" href="/02_assets/src/css/contact.css" />';
             break;
         default:
             // デフォルトの処理を追加

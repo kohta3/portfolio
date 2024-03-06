@@ -1,7 +1,27 @@
 .nav-bar{
+    width: 100%;
     position: fixed;
     top: 0;
     right: 0;
+}
+
+.backgroundActive{
+    background: rgba(0,0,0,0.7);
+    animation: fadein 0.5s forwards;
+}
+
+@keyframes fadein {
+    0%{
+        background-color: rgba(0,0,0,0);
+    }
+
+    100%{
+        background-color: rgba(0,0,0,0.7);
+    }
+}
+
+.nav-item a{
+    color: white;
 }
 
 .about{
@@ -111,7 +131,8 @@
 .hobby-content .hobby-row{
     display: flex;
     justify-content: space-between;
-    width: 100%;
+    width: 80%;
+    margin: auto auto 30px auto;
 }
 
 @media screen and (max-width: 768px) {
@@ -120,6 +141,7 @@
         justify-content: space-between;
         flex-direction: column;
         width: 100%;
+        margin-bottom: 0;
     }
 }
 
@@ -166,6 +188,18 @@ input#camp:checked ~ .camp-popup,
 input#travel:checked ~ .travel-popup,
 input#eat:checked ~ .eat-popup{
     display: block;
+    animation-name: fadein;
+    animation-duration: 0.5s;
+}
+
+@keyframes fadein {
+    0%{
+        opacity: 0;
+    }
+
+    100%{
+        opacity: 1;
+    }
 }
 
 .popup_img {
@@ -173,12 +207,18 @@ input#eat:checked ~ .eat-popup{
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
-    width: 90%;
+    width: 50%;
     z-index: 2;
 }
 
 .popup_img img{
     width: 100%;
-    object-fit: contain;
+    object-fit: cover;
     z-index: 3;
+}
+
+@media screen and (max-width: 768px) {
+    .popup_img {
+        width: 90%;
+    }
 }

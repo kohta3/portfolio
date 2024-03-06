@@ -5,14 +5,16 @@ document.addEventListener("DOMContentLoaded", () => {
     if (profileElement && navBarElement) {
         const profileClientRect = profileElement.getBoundingClientRect();
 
-        window.onscroll = function() {
+        function toggleBackground() {
             var scrollHeight = window.pageYOffset || document.documentElement.scrollTop;
-            
+
             if (scrollHeight > profileClientRect.top) {
-                navBarElement.style.backgroundColor = "rgba(0,0,0,0.7)";
-            }else{
-                navBarElement.style.backgroundColor = "";
+                navBarElement.classList.add('backgroundActive');
+            } else {
+                navBarElement.classList.remove('backgroundActive');
             }
-        };
+        }
+
+        window.addEventListener('scroll', toggleBackground);
     }
 });
