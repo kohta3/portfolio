@@ -204,6 +204,11 @@ footer .footer-content li:nth-child(1){
 
 @media screen and (max-width: 720px) {  
 
+    footer{
+        padding: 1px 0;
+
+    }
+
     footer .footer-img{
         flex: 1;
         text-align: center;
@@ -221,7 +226,7 @@ footer .footer-content li:nth-child(1){
     footer .footer-content h3{
         font-size: 14px;
         font-weight: 500;
-        margin-top: 20px;
+        margin-top: 10px;
     }
 
     footer .footer-content ul li{
