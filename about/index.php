@@ -8,27 +8,42 @@
     </div>
     <h1 class="about-title">Okamura Kohta<br>portfolio</h1>
 </div>
-<section class="profile">
-    <picture>
-        <source media="(min-width: 768px)" srcset="/02_assets/images/about/profile.jpg">
-        <img src="/02_assets/images/about/profile.jpg" alt="プロフィール" loading="lazy">
-    </picture>
-    <div class="profile-about">
-        <h2>Okamura Kohta</h2>
-        <h3>１９９６年福岡生まれ</h3>
-        <p>
-            機械系の大学を卒業後に機械系エンジニア、電気系エンジニア、システムエンジニアを経験しました。<br>
-            現在はD2Cを展開している企業でwebエンジニアとして働いています。<br>
-            フロントエンドからバックエンドまで、幅広い技術を使用して、様々なプロジェクトに携わってきました。<br>
-            PHP・Java・Dart・JavaScript・HTML・CSSをはじめLaravel・SpringBoot・Flutter・Vue.jsなどのフレームワークにも精通しています。<br>
-            私の目標は、ユーザーが喜ぶ価値あるプロダクトを提供することです。<br>
-            常に新しい技術やトレンドに興味を持ち、自己成長に努めています。<br>
-            技術的な挑戦に取り組むことが私のモチベーションです。<br>
-
-            こちらのページではこれまでに習得した技術の一部を使ってECサイトを作成しております。ご覧いただけると幸いです！
-        </p>
+<div class="section">
+    <h3>About me</h3>
+</div>
+<section>
+    <div class="profile">
+        <picture>
+            <source media="(min-width: 768px)" srcset="/02_assets/images/about/profile.jpg">
+            <img src="/02_assets/images/about/profile.jpg" alt="プロフィール" loading="lazy">
+        </picture>
+        <div class="profile-about">
+            <h2>Okamura Kohta</h2>
+            <h3>1996年10月9日福岡生まれ</h3>
+            <div class="keireki">
+                <h3>経歴</h3>
+                <div>
+                    <p>宇宙航空システム工学科を卒業</p>
+                    <p>機械系エンジニアとして熱流体解析を担当</p>
+                    <p>電気系エンジニアとして基板設計を担当</p>
+                    <p>システムエンジニアとしてシステム開発を担当</p>
+                    <p>【現在】webエンジニア</p>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="profile-content">
+        <h3>自己紹介</h3>
+        <p>現在はD2Cを展開している企業でwebエンジニアとして働いています。</p>
+        <p>フロントエンドからバックエンドまで、幅広い技術を使用して、様々なプロジェクトに携わってきました。</p>
+        <p>PHP・Java・Dart・JavaScript・HTML・CSSをはじめLaravel・SpringBoot・Flutter・Vue.jsなどのフレームワークにも精通しています。</p>
+        <p>私の目標は、ユーザーが喜ぶ価値あるプロダクトを提供することです。</p>
+        <p>常に新しい技術やトレンドに興味を持ち、自己成長に努めています。</p>
+        <p>技術的な挑戦に取り組むことが私のモチベーションです。</p>
+        <p>こちらのページではこれまでに習得した技術の一部を使ってECサイトを作成しております。ご覧いただけると幸いです！</p>
     </div>
 </section>
+
 <section class="hobby">
     <h3>Hobby</h3>
     <div class="hobby-content">

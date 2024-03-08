@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@100..900&display=swap');
+
 .nav-bar{
     width: 100%;
     position: fixed;
@@ -71,6 +73,12 @@
     align-items: center;
 }
 
+.section h3{
+    width: fit-content;
+    margin: 20px auto;
+    font-size: 36px;
+}
+
 .profile picture{
     flex: 1;
     text-align: center;
@@ -85,8 +93,41 @@
     flex: 2;
 }
 
+.keireki{
+    display: flex;
+    margin-top: 20px;
+    box-shadow: 0 0 100px 8px rgb(236, 236, 236);
+    padding: 10px;
+}
+
+.keireki h3{ 
+    writing-mode: vertical-rl;
+    text-align: center;
+    font-family: "Noto Sans JP", sans-serif;
+    font-optical-sizing: auto;
+    font-style: normal;
+}
+
+.keireki div p{
+    font-size: 18px;
+    font-weight: 200;
+}
+
+.profile-content{
+    width: fit-content;
+    margin: auto;
+    margin: 15px auto;
+    padding: 5px;
+    border-bottom: 1px solid ;
+}
+
 .profile-about h2{
-    font-size: 46px;
+    font-size: 34px;
+}
+
+.profile-about h3{
+    font-size: 20px;
+    font-weight: 100;
 }
 
 .profile-about p{
@@ -106,6 +147,8 @@
 
     .profile {
         flex-direction: column;
+        margin: 10px 15px;
+        padding: 15px 0;
     }
 
     .profile picture{
@@ -117,12 +160,36 @@
     }
 
     .profile-about h2{
-        font-size: 30px;
+        font-size: 40px;
+        text-align: center;
+    }
+
+    .profile-about h3{
+        font-size: 20px;
+        text-align: center;
     }
 
     .profile-about p{
         font-size: 14px;
         line-height : 20px;
+    }
+
+    .keireki{
+        box-shadow: none;
+    }
+    
+    .keireki div p{
+        font-size: 12px;
+        font-weight: 400;
+    }
+
+    .profile-content{
+        width: 90%;
+    }
+
+    .profile-content p{
+        font-size: 12px;
+        margin-bottom: 2px;
     }
 }
 
