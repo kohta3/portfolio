@@ -23,11 +23,11 @@
             <div class="keireki">
                 <h3>経歴</h3>
                 <div>
-                    <p>宇宙航空システム工学科を卒業</p>
-                    <p>機械系エンジニアとして熱流体解析を担当</p>
-                    <p>電気系エンジニアとして基板設計を担当</p>
-                    <p>システムエンジニアとしてシステム開発を担当</p>
-                    <p>【現在】webエンジニア</p>
+                    <p>2019年3月 宇宙航空システム工学科を卒業</p>
+                    <p>2019年4月 機械系エンジニアとして熱流体解析を担当</p>
+                    <p>2020年8月 電気系エンジニアとして基板設計を担当</p>
+                    <p>2022年10月 システムエンジニアとしてシステム開発を担当</p>
+                    <p>2023年5月~現在 D2C企業でwebエンジニアとして勤務</p>
                 </div>
             </div>
         </div>
@@ -58,6 +58,8 @@
                 <label for="mortorcycle"></label>
                 <div class="popup_img">
                     <img src="/02_assets/images/about/hobby/mortorcycle_1600_1500.jpg" alt="バイクツーリング">
+                    <p>18歳のときに普通自動二輪の免許をとって以来、3台のバイクをのりついできました。</p>
+                    <p>今は写真のG310GSでよく阿蘇へでかけています！</p>
                 </div>
             </div>
 
@@ -70,6 +72,8 @@
                 <label for="camp"></label>
                 <div class="popup_img">
                     <img src="/02_assets/images/about/hobby/camp_1600_1500.jpg" alt="キャンプ">
+                    <p>高校3年生の頃にキャンプにハマりました。最近ではふもとっぱらや陣馬形山へ行きました。</p>
+                    <p>大学時代は熊本県内に住んでいたので九重や阿蘇へよく行ってました！</p>
                 </div>
             </div>
 
@@ -84,6 +88,8 @@
                 <label for="travel"></label>
                 <div class="popup_img">
                     <img src="/02_assets/images/about/hobby/ryokou_1600_1500.jpg" alt="旅行">
+                    <p>よく一人旅をします！国内は全都道府県へ行きました。</p>
+                    <p>海外は台湾、タイ、ラオス、カンボジア、ベトナム、韓国へ行ったことがあります！</p>
                 </div>
             </div>
 
@@ -96,6 +102,8 @@
                 <label for="eat"></label>
                 <div class="popup_img">
                     <img src="/02_assets/images/about/hobby/eat_1600_1500.jpg" alt="食べ歩き">
+                    <p>現在は福岡市内に住んでいるので太宰府や天神でよくいろんなものを食べ歩いています！</p>
+                    <p>食べ物だけじゃなく、お酒もよく飲みます。</p>
                 </div>
             </div>
         </div>

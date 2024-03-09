@@ -28,11 +28,11 @@
 
 @keyframes fadeinSp {
     0%{
-        background-color: rgba(0,0,0,0.7);
+        background-color: rgba(255, 255, 255, 0.7);
     }
 
     100%{
-        background-color: rgba(0,0,0,0.2);
+        background-color: rgba(255, 255, 255, 0.2);
     }
 
 }
@@ -122,6 +122,10 @@
     border-bottom: 1px solid ;
 }
 
+.profile-content h3{
+    font-weight: 100;
+}
+
 .profile-about h2{
     font-size: 34px;
 }
@@ -191,6 +195,7 @@
     .profile-content p{
         font-size: 12px;
         margin-bottom: 2px;
+        font-weight: 100;
     }
 }
 
@@ -231,7 +236,25 @@
 .hobby-content .hobby-row label{
     flex: 1;
     text-align: center;
+    cursor: pointer;
 }
+
+
+@media screen and (min-width: 768px) {
+    .hobby-content .hobby-row label:hover{
+        animation: zoom 1s forwards;
+    }
+    @keyframes zoom{
+        0%{
+            transform: scale(1);
+        }
+    
+        100%{
+            transform: scale(1.1);
+        }
+    }
+}
+
 
 .hobby-content .hobby-row label img{
     width: 80%;
@@ -264,6 +287,7 @@
     height: 100vh;
     z-index: 1;
     position: relative;
+    color: white;
 }
 
 input#mortorcycle:checked ~ .mortorcycle-popup,
@@ -300,8 +324,18 @@ input#eat:checked ~ .eat-popup{
     z-index: 3;
 }
 
+
+.popup_img p{
+    color: white;
+}
+
 @media screen and (max-width: 768px) {
     .popup_img {
         width: 90%;
+    }
+
+    .popup_img p{
+        font-size: 12px;
+        margin: 0;
     }
 }

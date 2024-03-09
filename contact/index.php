@@ -2,7 +2,7 @@
 <html lang="ja">
 <head>
     <?php
-        $page_title ="test"; 
+        $page_title ="portfolio お問い合わせページ"; 
         include('../component/header.php'); 
     ?>
 </head>
