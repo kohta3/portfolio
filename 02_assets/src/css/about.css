@@ -1,12 +1,5 @@
 @import url('https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@100..900&display=swap');
 
-.nav-bar{
-    width: 100%;
-    position: fixed;
-    top: 0;
-    right: 0;
-}
-
 .backgroundActive{
     background: rgba(0,0,0,0.7);
     animation: fadein 0.5s forwards;

@@ -1,14 +1,27 @@
+body{
+    height: fit-content;
+    padding-top: 100px;
+}
+
 .nav-bar{
     border-bottom: 1px solid grey;
+    background: #f6f6f6;
 }
 
 .nav-bar a{
     color: black;
 }
+
+.sns-icon:nth-child(2){
+    background: black;
+    border-radius: 5px;
+}
+
 .contact{
     position: relative;
     min-height: 80vh;
     margin: 40px;
+    z-index: -1;
 }
 
 .contact-inner {
@@ -166,6 +179,10 @@ em{
 }
 
 @media screen and (max-width: 768px) {
+    .nav-bar a{
+        color: white;
+    }
+
     .contact{
         margin: 0;
     }
