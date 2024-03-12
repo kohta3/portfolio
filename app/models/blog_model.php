@@ -1,5 +1,6 @@
 <?php
-    require_once './common_model.php';
+
+    require_once '../app/models/common_model.php';
 
     class Blog {
         private $connect;
@@ -8,16 +9,22 @@
             $this->connect = new common_model();
         }
 
-        function create($title,$genre,$content,$userName,$imageUrl) {
-            $title = $this->connect->escapeString($title);
-            $genre = $this->connect->escapeString($genre);
-            $content = $this->connect->escapeString($content);
-            $userName = $this->connect->escapeString($userName);
-            $imageUrl = $this->connect->escapeString($imageUrl);
-    
+        function create($title, $genre, $content, $userName, $imageUrl) {
+            $common = new common_model();
+            $common->connectDB(); // データベースに接続
+        
+            // エスケープ処理
+            $title = $common->escapeString($title);
+            $genre = $common->escapeString($genre);
+            $content = $common->escapeString($content);
+            $userName = $common->escapeString($userName);
+            $imageUrl = $common->escapeString($imageUrl);
+        
             $query = "INSERT INTO blog_colmun (title, genre, content, user_name, image_url) VALUES ('$title', '$genre', '$content', '$userName', '$imageUrl')";
-            $this->connect->query($query);
+            $conn = $common->getConnection(); // データベース接続オブジェクトを取得
+            $conn->query($query); // クエリを実行
         }
+        
 
         function show() {
             $query = "SELECT * FROM blog_colmun";

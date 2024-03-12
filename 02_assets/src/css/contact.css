@@ -6,6 +6,7 @@ body{
 .nav-bar{
     border-bottom: 1px solid grey;
     background: #f6f6f6;
+    z-index: 2;
 }
 
 .nav-bar a{
@@ -21,7 +22,7 @@ body{
     position: relative;
     min-height: 80vh;
     margin: 40px;
-    z-index: -1;
+    z-index: 1;
 }
 
 .contact-inner {

@@ -11,7 +11,7 @@
             if ($conn->connect_error) {
                 setcookie("db_status", "接続失敗", time()+10);
             }
-            echo "データベースに接続しました";   
+            echo $conn;   
         }
     }
 ?>

@@ -37,7 +37,7 @@
             // 他のページに対する処理を追加
             break;
         case '/blog':
-            // 他のページに対する処理を追加
+            echo '<link rel="stylesheet" href="/02_assets/src/css/blog.css" />';
             break;
         case '/contact':
             echo '<link rel="stylesheet" href="/02_assets/src/css/contact.css" />';
