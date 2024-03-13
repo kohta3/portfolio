@@ -1,27 +1,34 @@
 <?php
-    // common_model.php ファイルを読み込む
-    require_once '../01_app/models/common_model.php';
+    // データベース接続
+    $servername = "mysql1.php.starfree.ne.jp"; // データベースのホスト名
+    $username = "kohta_admin"; // データベースのユーザー名
+    $password = "kohta1009"; // データベースのパスワード
+    $dbname = "kohta_portfolio"; // データベースの名前
 
-    // common_model クラスのインスタンスを作成する
-    $common = new common_model();
+    $conn = new mysqli($servername, $username, $password, $dbname);
 
-    // connectDB メソッドを呼び出してデータベースに接続する
-    $conn = $common->connectDB();
+    // テーブルのクエリ
+    // $query = "INSERT INTO blog_colmun (title, genre, content, user_name, image_url) VALUES ('$title', '$genre', '$content', '$userName', '$imageUrl')";
+    $query = "SELECT * FROM blog_colmun";
+    $result = $conn->query($query);
 
-    // データベースに接続できたことを確認する
-    echo "データベースに接続しました";
+    // 接続を閉じる
+    $conn->close();
 ?>
 
 <!DOCTYPE html>
 <html lang="ja">
+
 <head>
     <?php
         $page_title ="test"; 
         include('../component/header.php'); 
     ?>
 </head>
+
 <body>
     <?php include('../component/nav.php'); ?>
     <?php include('../component/footer.php'); ?>
 </body>
+
 </html>

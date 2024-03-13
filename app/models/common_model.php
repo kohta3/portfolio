@@ -7,11 +7,9 @@
             $dbname = "kohta_portfolio"; // データベースの名前
         
             $conn = new mysqli($servername, $username, $password, $dbname);
-        
-            if ($conn->connect_error) {
-                setcookie("db_status", "接続失敗", time()+10);
-            }
-            echo $conn;   
+           
+            return $conn;
         }
+
     }
 ?>

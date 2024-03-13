@@ -3,26 +3,19 @@
     require_once '../app/models/common_model.php';
 
     class Blog {
-        private $connect;
+        private $common;
 
         function __construct() {
-            $this->connect = new common_model();
+            $this->common = new common_model();
         }
 
         function create($title, $genre, $content, $userName, $imageUrl) {
-            $common = new common_model();
-            $common->connectDB(); // データベースに接続
-        
-            // エスケープ処理
-            $title = $common->escapeString($title);
-            $genre = $common->escapeString($genre);
-            $content = $common->escapeString($content);
-            $userName = $common->escapeString($userName);
-            $imageUrl = $common->escapeString($imageUrl);
+            $connect = $this->common->connectDB();
         
             $query = "INSERT INTO blog_colmun (title, genre, content, user_name, image_url) VALUES ('$title', '$genre', '$content', '$userName', '$imageUrl')";
-            $conn = $common->getConnection(); // データベース接続オブジェクトを取得
-            $conn->query($query); // クエリを実行
+            $connect->query($query);
+            
+            $connect->close();
         }
         
 

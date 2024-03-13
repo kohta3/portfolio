@@ -1,0 +1,24 @@
+main {
+    display: flex;
+    position: relative;
+    min-height: 100vh;
+}
+
+main .sidebar {
+    flex: 1;
+    background: #f6f6f6;
+}
+
+main .admin-content {
+    flex: 3;
+    padding: 3%;
+}
+
+@media screen and (max-width: 720px) {
+    main .sidebar {
+        /* display: none; */
+        padding: 5% 5% 0 0;
+        position: absolute;
+        height: 100vw;    
+    }
+}
