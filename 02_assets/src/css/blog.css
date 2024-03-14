@@ -1,3 +1,72 @@
 body{
     padding-top: 100px;
 }
+
+.menu-title{
+    width: 100%;
+}
+
+.menu-title h1{
+    margin: 0 auto;
+    width: fit-content;
+}
+
+.blog-ranking{
+    display: flex;
+    width: 90%;
+    margin: 40px auto;
+}
+
+.blog-ranking .blog-ranking-content{
+    flex: 1;
+}
+
+.blog-ranking .blog-ranking-content h3{
+    text-align: center;
+    font-size: 16px;
+    font-weight: 300;
+}
+
+.blog-ranking .blog-ranking-content ol li{
+    margin: 30px 0;
+}
+
+.menu-title h4{
+    margin: 0 auto;
+    width: fit-content;
+}
+
+.blog-sort-content{
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    margin-top: 30px;
+}
+
+.blog-sort-content .blog-column{
+    width: 90%;
+    margin: auto;
+    padding: 30px;
+    border-bottom: 1px solid black;
+    display: flex;
+}
+
+.blog-sort-content .blog-column .column-innner1{
+    flex: 4;
+}
+
+.blog-sort-content .blog-column .column-innner2{
+    flex: 1;   
+}
+
+.blog-sort-content .blog-column .column-innner1 .blog-column-row{
+    display: flex;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+.blog-sort-content .blog-column-row img{
+    width: 12px;
+    object-fit: contain;
+}
