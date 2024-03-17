@@ -2,6 +2,15 @@ body{
     padding-top: 100px;
 }
 
+.nav-bar{
+    border-bottom: 1px solid grey;
+    background: #f6f6f6;
+    z-index: 2;
+}
+
+.nav-bar a{
+    color: black;
+}
 .menu-title{
     width: 100%;
 }
@@ -59,6 +68,11 @@ body{
     flex: 1;   
 }
 
+.blog-sort-content .blog-column .column-innner2 img{
+    width: 100%;
+    object-fit: contain;
+}
+
 .blog-sort-content .blog-column .column-innner1 .blog-column-row{
     display: flex;
     list-style: none;
@@ -69,4 +83,19 @@ body{
 .blog-sort-content .blog-column-row img{
     width: 12px;
     object-fit: contain;
+}
+
+@media screen and (max-width: 768px) {
+    .blog-ranking{
+        flex-direction: column;
+    }
+
+    .blog-sort-content .blog-column{
+        width: 94%;
+        padding: 10px;
+    }
+
+    .blog-sort-content .blog-column .column-innner2 img{
+        margin: auto;
+    }
 }

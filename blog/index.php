@@ -1,5 +1,5 @@
 <?php 
-    // require_once "../app/controller/blog_controller.php";
+    require_once $_SERVER['DOCUMENT_ROOT']."/app/controller/blog_controller.php";
 
     // $blobController = new BlobController();
     // $result = $blobController->create();
@@ -9,7 +9,7 @@
 <html lang="ja">
 <head>
     <?php
-        $page_title ="test"; 
+        $page_title ="portfolio ブログトップ"; 
         include('../component/header.php'); 
     ?>
 </head>
@@ -60,7 +60,7 @@
                     </ul>
                 </div>
                 <div class="column-innner2">
-                    <img src="" alt="test">
+                    <img src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEgJWP8a9vbGKmeUKbagxvtnL6XsYxKaKeQ01Vm8uiQPdkAdpUQtSGaICZO9MY5P-uzPFhJ_i6txSb8aSjOlxNEgMTJEi8bh0QkHNv8L-96G4uERtiwIEDn7F9dj8Vie7_vCLxqOIH6Qtt0B/s800/job_programmer.png" alt="test">
                 </div>
             </div>
             <?php } ?>
