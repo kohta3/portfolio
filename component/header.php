@@ -42,6 +42,9 @@
         case '/contact':
             echo '<link rel="stylesheet" href="/02_assets/src/css/contact.css" />';
             break;
+        case '/404':
+            echo '<link rel="stylesheet" href="/02_assets/src/css/404.css" />';
+            break;
         default:
             // デフォルトの処理を追加
             break;

@@ -1,6 +1,6 @@
 <?php
 
-    require_once '../app/models/common_model.php';
+    require_once $_SERVER['DOCUMENT_ROOT'].'/app/models/common_model.php';
 
     class Blog {
         private $common;
