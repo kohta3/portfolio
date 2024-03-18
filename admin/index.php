@@ -2,7 +2,7 @@
     require_once "../app/common/common.php";
 
     $common = new common();
-    $session = $common->session();
+    $session = $common->generate_csrf_token();
 ?>
 <!DOCTYPE html>
 <html lang="ja">
@@ -26,9 +26,15 @@
             <div>
                 <h1>記事の投稿</h1>
             </div>
-            <form action="post">
+            <form action="../app/request/blog_request.php" method="post" enctype="multipart/form-data">
                 <input type="hidden" name="csrf_token" value="<?= $session ?>">
+                <input type="hidden" name="post_type" value="colmun_create">
                 <div>
+                    <label for="title">記事のタイトル</label>
+                    <input type="text" name="title" id="title">
+                </div>
+                <div>
+                    <label for="genre">ジャンル</label>
                     <select name="genre" id="genre">
                         <option selected disabled>ジャンルを選択してください</option>
                         <option value="筋トレ">筋トレ</option>
@@ -36,12 +42,8 @@
                     </select>
                 </div>
                 <div>
-                    <label for="title">記事のタイトル</label>
-                    <input type="text" name="title" id="title">
-                </div>
-                <div>
                     <label for="content">記事の内容</label>
-                    <input type="text" name="content" id="content">
+                    <textarea name="content" id="content"></textarea>
                 </div>
                 <div>
                     <label for="user_name">お名前</label>
@@ -50,6 +52,9 @@
                 <div>
                     <label for="image">写真を添付</label>
                     <input type="file" name="image" id="image">
+                </div>
+                <div class="btn-div">
+                    <button type="submit">投稿する</button>
                 </div>
             </form>
         </div>
