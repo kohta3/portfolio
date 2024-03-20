@@ -27,7 +27,6 @@
         public function uploadImage($imagePath) {
             $driveService = new Drive($this->client);
             $extension = pathinfo($imagePath, PATHINFO_EXTENSION);
-            
             // 現在の日時を使用してイメージ名を作成
             $currentDateTime = date('YmdHis');
             $imageName = $currentDateTime . '_' . uniqid() . $extension;
