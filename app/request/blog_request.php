@@ -16,12 +16,13 @@
         switch ($_POST['post_type']) {
             case 'colmun_create':
                 $image_uploader = new GoogleDriveUploader();
-                $image_uploader->uploadImage($imagePath, $imageName);
-                die;
+                $image_uploader->uploadImage($_SERVER['DOCUMENT_ROOT'].$imagePath."/".$imageName);
                 $blog->create();
                 break;
             default:
                 // その他の処理
+                die("その他の処理");
+
                 break;
         }
 
@@ -29,4 +30,3 @@
         header(`Location:  $redirect`);
         exit(); 
     }
-?>
