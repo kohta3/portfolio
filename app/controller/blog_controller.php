@@ -8,9 +8,9 @@
             $this->blog = new Blog();
         }
 
-        function create() {
+        function create($title, $genre, $content, $userName, $imageUrl) {
             try {
-                $this->blog->create("test","test","test","test","test");
+                $this->blog->create($title, $genre, $content, $userName, $imageUrl);
             } catch (\Throwable $th) {
                 return $th;
             }
@@ -18,8 +18,8 @@
             return "登録しました";
         }
 
-        function show() {
-            // Show method implementation goes here
+        function show(?String $genre,?Int $limit) {
+            return $this->blog->show($genre,$limit);
         }
     }
 ?>

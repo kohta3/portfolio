@@ -25,6 +25,9 @@
         case '/contact':
             echo '<script src="/02_assets/src/js/contact.js"></script>';
             break;
+        case '/admin':
+            echo '<script src="/02_assets/src/js/admin.js"></script>';
+            break;
         default:
             // デフォルトの処理を追加
             break;

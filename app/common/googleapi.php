@@ -24,20 +24,19 @@
             return $mimeType;
         }
 
-        public function uploadImage($imagePath) {
+        public function uploadImage($imagePath,$imageName) {
             $driveService = new Drive($this->client);
-            $extension = pathinfo($imagePath, PATHINFO_EXTENSION);
-            // 現在の日時を使用してイメージ名を作成
+            $extension = pathinfo($imageName, PATHINFO_EXTENSION);
             $currentDateTime = date('YmdHis');
-            $imageName = $currentDateTime . '_' . uniqid() . $extension;
-
+            $imageName = $currentDateTime . '_' . uniqid() .".". $extension;
+        
             $portfolioFolderId = '1uNVd81cFrmRn4RmRoFql3PQuR-1bIJ16';
-
+        
             $fileMetadata = new DriveFile([
                 'name' => $imageName, 
                 'parents' => [$portfolioFolderId], 
             ]);
-
+        
             $context = stream_context_create([
                 'ssl' => [
                     'verify_peer' => false,
@@ -46,7 +45,7 @@
             ]);
             
             $content = file_get_contents($imagePath, false, $context);
-
+        
             $mimeType = $this->getMimeType($imagePath);
             
             $file = $driveService->files->create($fileMetadata, [
@@ -55,7 +54,25 @@
                 'uploadType' => 'multipart',
                 'fields' => 'id'
             ]);
-
-            return $file->id;
+        
+            // ファイルのアップロードに成功したら、そのファイルのIDを取得する
+            $fileId = $file->id;
+        
+            // 画像のURLを構築する
+            $imageUrl = "https://lh3.googleusercontent.com/d/" . $fileId;
+            
+            // 共有リンクを取得する
+            $permission = new Google_Service_Drive_Permission([
+                'type' => 'anyone',
+                'role' => 'reader',
+            ]);
+            $driveService->permissions->create($fileId, $permission, ['fields' => 'id']);
+        
+            // 共有リンクを取得する
+            $file = $driveService->files->get($fileId, ['fields' => 'webViewLink']);
+            $sharedLink = $file->webViewLink;
+            
+            return $sharedLink;
         }
+        
     }  

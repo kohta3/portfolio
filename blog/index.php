@@ -1,9 +1,12 @@
 <?php 
     require_once $_SERVER['DOCUMENT_ROOT']."/app/controller/blog_controller.php";
 
-    // $blobController = new BlobController();
-    // $result = $blobController->create();
-    // echo $result;
+    $blobController = new BlobController();
+    $sortCreateAt = $blobController->show(null,10);
+    $sortEngineer = $blobController->show("エンジニア",3);
+    $sortHobby = $blobController->show("趣味",3);
+    $sortEat = $blobController->show("ご飯",3);
+    
 ?>
 <!DOCTYPE html>
 <html lang="ja">
@@ -23,25 +26,47 @@
             <div class="blog-ranking-content -engineer">
                 <h3>エンジニア</h3>
                 <ol>
-                    <li>testtitle</li>
-                    <li></li>
-                    <li></li>
+                    <?php
+                        foreach ($sortEngineer as $col):
+                            echo '<li><a href="./show.php?colmun='.$col['id'].'">'.$col['title'].'</a></li>';
+                        endforeach;
+                        if (count($sortEngineer) < 3):
+                            for ($i = count($sortEngineer); $i < 3; $i++) {
+                                echo "<li>coming soon..</li>";
+                            }
+                        endif;
+                    ?>
                 </ol>
+
             </div>
             <div class="blog-ranking-content -hobby">
                 <h3>趣味</h3>
                 <ol>
-                    <li></li>
-                    <li></li>
-                    <li></li>
+                    <?php
+                        foreach ($sortHobby as $col):
+                            echo '<li><a href="./show.php?colmun='.$col['id'].'">'.$col['title'].'</a></li>';
+                        endforeach;
+                        if (count($sortHobby) < 3):
+                            for ($i = count($sortHobby); $i < 3; $i++) {
+                                echo "<li>coming soon..</li>";
+                            }
+                        endif;
+                    ?>
                 </ol>
             </div>
             <div class="blog-ranking-content -eat">
                 <h3>ご飯</h3>
                 <ol>
-                    <li></li>
-                    <li></li>
-                    <li></li>
+                    <?php
+                        foreach ($sortEat as $col):
+                            echo '<li><a href="./show.php?colmun='.$col['id'].'">'.$col['title'].'</a></li>';
+                        endforeach;
+                        if (count($sortEat) < 3):
+                            for ($i = count($sortEat); $i < 3; $i++) {
+                                echo "<li>coming soon..</li>";
+                            }
+                        endif;
+                    ?>
                 </ol>
             </div>
         </div>
@@ -49,20 +74,20 @@
             <h4>すべてのカテゴリーの新着記事</h4>
         </div>
         <div class="blog-sort-content">
-            <?php for($i=0; $i<10; $i++) { ?>
-            <div class="blog-column">
+            <?php foreach ($sortCreateAt as $row) { ?>
+            <a class="blog-column rainbow " href="./show.php?colmun=<?= $row['id'] ?>">
                 <div class="column-innner1">
-                    <h3>テストタイトルですよ</h3>
-                    <p>見出し見出し見出し見出し見出し見出し見出し見出し見出し見出し見出し見出し見出し見出し</p>
+                    <h3><?= $row['title'] ?></h3>
+                    <p><?= $row['content'] ?></p>
                     <ul class="blog-column-row">
-                        <li>2024/03/11</li>
-                        <li><img src="/02_assets/images/blog/tagicon.svg" alt="タグ"></li>
+                        <li><?= $row['create_at'] ?></li>
+                        <li><img src="/02_assets/images/blog/tagicon.svg" alt="タグ"><?= $row['genre'] ?></li>
                     </ul>
                 </div>
                 <div class="column-innner2">
-                    <img src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEgJWP8a9vbGKmeUKbagxvtnL6XsYxKaKeQ01Vm8uiQPdkAdpUQtSGaICZO9MY5P-uzPFhJ_i6txSb8aSjOlxNEgMTJEi8bh0QkHNv8L-96G4uERtiwIEDn7F9dj8Vie7_vCLxqOIH6Qtt0B/s800/job_programmer.png" alt="test">
+                    <img src="<?= $row['image_url']?>" alt="コンテンツ">
                 </div>
-            </div>
+            </a>
             <?php } ?>
         </div>
     </main>

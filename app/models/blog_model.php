@@ -19,26 +19,32 @@
         }
         
 
-        function show() {
-            $query = "SELECT * FROM blog_colmun";
-            $result = $this->connect->query($query);
-
-            $articles = array();
-
-            if ($result->num_rows > 0) {
-                while ($row = $result->fetch_assoc()) {
-                    $article = new stdClass(); 
-                    $article->title = $row['title'];
-                    $article->genre = $row['genre'];
-                    $article->content = $row['content'];
-                    $article->userName = $row['user_name'];
-                    $article->imageUrl = $row['image_url'];
-                    
-                    $articles[] = $article;
-                }
+        function show(?String $genre, ?Int $limit) {
+            $connect = $this->common->connectDB();
+        
+            if ($genre != null && $limit != null) {
+                $query = "SELECT * FROM blog_colmun WHERE genre = '$genre' LIMIT $limit";
+            } elseif ($genre != null) {
+                $query = "SELECT * FROM blog_colmun WHERE genre = '$genre'";
+            } elseif ($limit != null) {
+                $query = "SELECT * FROM blog_colmun LIMIT $limit";
+            } else {
+                $query = "SELECT * FROM blog_colmun";
             }
-
-            return $articles;
+        
+            try {
+                $result = $connect->query($query);
+                $blogs = array();
+                while ($row = $result->fetch_assoc()) {
+                    $blogs[] = $row;
+                }
+                return $blogs;
+            } catch (\Throwable $th) {
+                return $th;
+            }
+        
+            $connect->close();
         }
+        
     }
 ?>

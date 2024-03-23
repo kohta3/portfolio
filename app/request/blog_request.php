@@ -10,14 +10,14 @@
 
     if (stristr($referer_url, $url) || count($_POST) > 0) {
 
-        $imagePath = $_FILES['image']['tmp_name']; // 一時的なファイルのパス
-        $imageName = $_FILES['image']['name']; // ファイル名
+        $imagePath = $_FILES['image']['tmp_name'];
+        $imageName = $_FILES['image']['name']; 
 
         switch ($_POST['post_type']) {
             case 'colmun_create':
                 $image_uploader = new GoogleDriveUploader();
-                $image_uploader->uploadImage($_SERVER['DOCUMENT_ROOT'].$imagePath."/".$imageName);
-                $blog->create();
+                $imageUrl = $image_uploader->uploadImage($imagePath,$imageName);
+                $blog->create($_POST['title'], $_POST['genre'], $_POST['content'], 'Kohta', $imageUrl);
                 break;
             default:
                 // その他の処理
