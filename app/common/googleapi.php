@@ -72,7 +72,7 @@
             $file = $driveService->files->get($fileId, ['fields' => 'webViewLink']);
             $sharedLink = $file->webViewLink;
             
-            return $sharedLink;
+            return $imageUrl;
         }
         
     }  

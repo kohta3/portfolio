@@ -16,7 +16,8 @@
                 <img src="/02_assets/images/contact/mail.png" alt="">
             </picture>
             <h2>Contact</h2>
-            <form action="" method="post" id="form">
+            <form action="../app/request/contact_request.php" method="post" id="form">
+                <input type="hidden" name="post_type" value="contact_send">
                 <div class="contact-input">
                     <label for="name">お名前<em>*</em></label>
                     <div>

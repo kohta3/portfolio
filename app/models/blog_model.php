@@ -23,13 +23,13 @@
             $connect = $this->common->connectDB();
         
             if ($genre != null && $limit != null) {
-                $query = "SELECT * FROM blog_colmun WHERE genre = '$genre' LIMIT $limit";
+                $query = "SELECT * FROM blog_colmun WHERE genre = '$genre' ORDER BY create_at DESC LIMIT $limit";
             } elseif ($genre != null) {
-                $query = "SELECT * FROM blog_colmun WHERE genre = '$genre'";
+                $query = "SELECT * FROM blog_colmun WHERE genre = '$genre' ORDER BY create_at DESC";
             } elseif ($limit != null) {
-                $query = "SELECT * FROM blog_colmun LIMIT $limit";
+                $query = "SELECT * FROM blog_colmun ORDER BY create_at DESC LIMIT $limit;";
             } else {
-                $query = "SELECT * FROM blog_colmun";
+                $query = "SELECT * FROM blog_colmun ORDER BY create_at DESC";
             }
         
             try {
