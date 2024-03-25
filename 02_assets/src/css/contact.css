@@ -1,6 +1,6 @@
 body{
     height: fit-content;
-    padding-top: 100px;
+    padding-top: 80px;
 }
 
 .nav-bar{
@@ -16,6 +16,22 @@ body{
 .sns-icon:nth-child(2){
     background: black;
     border-radius: 5px;
+}
+
+.alertText{
+    display: flex;
+    justify-content: center;
+    
+}
+
+.alertText div{
+    background-color: rgba(178, 255, 178, 0.7);
+    width: fit-content;
+    padding: 7px 20px;
+}
+
+.alertText div p{
+    margin: 0;
 }
 
 .contact{

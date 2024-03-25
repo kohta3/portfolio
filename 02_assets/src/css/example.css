@@ -1,0 +1,18 @@
+body{
+    padding-top: 80px;
+}
+
+.nav-bar{
+    border-bottom: 1px solid grey;
+    background: #f6f6f6;
+    z-index: 2;
+}
+
+.nav-bar a{
+    color: black;
+}
+
+.sns-icon:nth-child(2){
+    background: black;
+    border-radius: 5px;
+}

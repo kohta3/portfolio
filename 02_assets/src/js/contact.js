@@ -1,3 +1,9 @@
+function setCookies(key, value, time) {
+    const currentTime = new Date();
+    const expirationTime = new Date(currentTime.getTime() + time);
+    document.cookie = key + "=" + value + "; expires=" + expirationTime.toUTCString() + "; path=/";
+}
+
 function inputChk(inputElements) {
     let isValid = true;
     for (const element of inputElements) {
@@ -57,17 +63,40 @@ function allowedChk() {
     return allow.checked;
 }
 
-function clickEvent() {
-    const form = document.getElementById('form'); 
-    form.addEventListener("submit", event => {
-        event.preventDefault(); 
+async function fetchAccess(formElements) {
+    const url = "/app/request/contact_request.php";
+    
+    const formData = new FormData(formElements);
+
+    const response = await fetch(url, {
+        method: "post",
+        body: formData
+    }); 
+
+    return response.ok; 
+}
+
+async function clickEvent() {
+    const form = document.getElementById('form');
+    form.addEventListener("submit", async event => {
+        event.preventDefault();
         const inputElements = document.querySelectorAll("input, select, textarea");
         if (!inputChk(inputElements) || !mailChk() || !allowedChk()) {
             return false;
         }
-        form.submit();
+
+        const success = await fetchAccess(form);
+
+        if (success) {
+            setCookies("contactSuccess", true, 3000);
+        } else {
+            setCookies("contactSuccess", false, 3000);
+        }
+
+        window.location = "./";
     });
 }
+
 
 document.addEventListener("DOMContentLoaded", () => {
     clickEvent();

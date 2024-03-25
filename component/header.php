@@ -34,7 +34,7 @@
             echo '<link rel="stylesheet" href="/02_assets/src/css/about.css" />';
             break;
         case '/example':
-            // 他のページに対する処理を追加
+            echo '<link rel="stylesheet" href="/02_assets/src/css/example.css" />';
             break;
         case '/blog':
             echo '<link rel="stylesheet" href="/02_assets/src/css/blog.css" />';

@@ -1,3 +1,9 @@
+<?php 
+    $bool = false;
+    if (isset($_COOKIE['contactSuccess'])) {
+        $bool = $_COOKIE['contactSuccess'];
+    }
+?>
 <!DOCTYPE html>
 <html lang="ja">
 <head>
@@ -9,6 +15,11 @@
 <body>
     <?php include('../component/nav.php'); ?>
 
+    <section class="alertText" style="visibility: <?php if($bool):?> visible <?php else: ?> hidden <?php endif; ?>">
+        <div>
+            <p>送信に成功しました</p>
+        </div>
+    </section>
     <section class="contact">
         <div class="contact-inner">
             <picture>
@@ -16,7 +27,7 @@
                 <img src="/02_assets/images/contact/mail.png" alt="">
             </picture>
             <h2>Contact</h2>
-            <form action="../app/request/contact_request.php" method="post" id="form">
+            <form action="" method="post" id="form">
                 <input type="hidden" name="post_type" value="contact_send">
                 <div class="contact-input">
                     <label for="name">お名前<em>*</em></label>
@@ -45,8 +56,8 @@
                     <div>
                         <select name="genre" id="genre">
                             <option value="" disabled selected>ジャンルを選択してください</option>
-                            <option value="1">仕事の依頼について</option>
-                            <option value="2">その他</option>
+                            <option value="仕事の依頼について">仕事の依頼について</option>
+                            <option value="その他">その他</option>
                         </select>
                         <p>選択してください</p>
                     </div>

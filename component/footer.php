@@ -17,7 +17,7 @@
         case '':
             break;
         case '/example':
-            // 他のページに対する処理を追加
+            echo '<script src="/02_assets/src/js/example.js"></script>';
             break;
         case '/blog':
             // 他のページに対する処理を追加

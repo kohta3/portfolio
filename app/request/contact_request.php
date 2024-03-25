@@ -11,7 +11,7 @@
                 $ch = curl_init();
 
                 // cURL オプションを設定
-                curl_setopt($ch, CURLOPT_URL, 'https://script.google.com/macros/s/AKfycbz2Qy7FcrOmJ0OrW7VBB8aRy6ID7wYMNPUcKFBWG4QZMQwtmix1s2hk0bsW-9pP-s7j/exec');
+                curl_setopt($ch, CURLOPT_URL, 'https://script.google.com/macros/s/AKfycbzepYWU2rIlOoBld9F4ms1B4CssCMtn6F0r-7tRWcnEjslvJxG04xzKCiSp6UKnfkkx/exec');
                 curl_setopt($ch, CURLOPT_POST, 1);
                 curl_setopt($ch, CURLOPT_POSTFIELDS, http_build_query($_POST));
                 curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
@@ -21,13 +21,8 @@
 
                 // cURL リソースを閉じる
                 curl_close($ch);
-
-                // レスポンスを出力
-                echo $response;
-
-                // header(`Location:  $redirect`);
-                // exit();                    
-                die; 
+                
+                return $response;
                 break;
             default:
                 die("その他の処理");

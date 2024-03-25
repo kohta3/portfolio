@@ -1,4 +1,3 @@
-
 document.addEventListener("DOMContentLoaded", () => {
     const profileElement = document.querySelector('.profile');
     const navBarElement = document.querySelector('.nav-bar');
