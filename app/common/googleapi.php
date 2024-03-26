@@ -24,14 +24,14 @@
             return $mimeType;
         }
 
-        public function uploadImage($imagePath,$imageName) {
+        public function uploadImage($imagePath,$imageName,$folderId) {
             $driveService = new Drive($this->client);
             $extension = pathinfo($imageName, PATHINFO_EXTENSION);
             $currentDateTime = date('YmdHis');
             $imageName = $currentDateTime . '_' . uniqid() .".". $extension;
         
-            $portfolioFolderId = '1uNVd81cFrmRn4RmRoFql3PQuR-1bIJ16';
-        
+            $portfolioFolderId = $folderId;
+            
             $fileMetadata = new DriveFile([
                 'name' => $imageName, 
                 'parents' => [$portfolioFolderId], 

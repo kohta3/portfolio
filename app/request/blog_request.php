@@ -16,7 +16,7 @@
         switch ($_POST['post_type']) {
             case 'colmun_create':
                 $image_uploader = new GoogleDriveUploader();
-                $imageUrl = $image_uploader->uploadImage($imagePath,$imageName);
+                $imageUrl = $image_uploader->uploadImage($imagePath,$imageName,"1uNVd81cFrmRn4RmRoFql3PQuR-1bIJ16");
                 $blog->create($_POST['title'], $_POST['genre'], $_POST['content'], 'Kohta', $imageUrl);
                 break;
             default:

@@ -209,6 +209,10 @@ main{
         padding: 10px;
     }
 
+    .blog-sort-content .blog-column:active {
+        background: linear-gradient(135deg, #FFFFFF, #CCCCCC);
+    }    
+
     .blog-sort-content .blog-column .column-innner1 {
         width: 70%;
     }

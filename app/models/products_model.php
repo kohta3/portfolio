@@ -2,7 +2,7 @@
 
     require_once $_SERVER['DOCUMENT_ROOT'].'/app/models/common_model.php';
 
-    class Product {
+    class Products {
         private $common;
 
         function __construct() {
